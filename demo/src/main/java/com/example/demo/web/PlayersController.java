@@ -34,7 +34,7 @@ public class PlayersController {
     @PostMapping("/addContract/{idPlayer}")
     public String signNewContract(@PathVariable("idPlayer")Long idPlayer, @ModelAttribute("newContract") Contract contract){
         service.signNewDeal(service.getById(idPlayer),contract);
-        return "forward:/players/{idPlayer}";
+        return "players/{idPlayer}";
     }
 
 

@@ -24,7 +24,7 @@ ${player.assists}
 ${player.matchs}
 
 <h2> Sign a new contract</h2>
-<form:form action="/clubs/addContract/${club.id}" method="post" modelAttribute="newContract">
+<form:form action="players/addContract/${player.id}" method="post" modelAttribute="newContract">
     <div class="mb-3">
         <form:label path="signatureDate" for="Sgndate"></form:label>
         <form:input id="Sgndate" path="signatureDate" value="" type="date"  placeholder="Signature Date"/><br/>

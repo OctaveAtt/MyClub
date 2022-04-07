@@ -47,12 +47,12 @@ public class AgentController {
     }
 
     @PostMapping("/register")
-    public String addAgent(@Valid @ModelAttribute("newClub") Agent agent, BindingResult result) throws IOException {
+    public String addAgent(@Valid @ModelAttribute("newAgent") Agent agent, BindingResult result) throws IOException {
         if (result.hasErrors()) {
             return "agents";
         }
         jpa.save(agent);
-        return "forward:/agents";
+        return "redirect:/agents";
     }
 
 

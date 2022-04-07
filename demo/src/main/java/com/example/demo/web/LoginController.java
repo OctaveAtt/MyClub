@@ -4,6 +4,7 @@ import com.example.demo.dao.jpa.IUserJPA;
 import com.example.demo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.SessionAttribute;
@@ -21,6 +22,7 @@ public class LoginController {
     @GetMapping("/login")
     public String login(@ModelAttribute("user") User user,HttpSession session){
         User dataUser = jpa.findByUsername(user.getUsername());
+        System.out.println("------>"+user.getUsername()+user.getPassword());
         if(dataUser != null && dataUser.verifyPassword(user)){
             return "index";
         }
@@ -29,8 +31,9 @@ public class LoginController {
     }
 
     @GetMapping("/logout")
-    public String logout(HttpSession session){
+    public String logout(HttpSession session, Model model){
 
+        model.addAttribute("user",null);
         session.invalidate();
         return "clubs";
     }
