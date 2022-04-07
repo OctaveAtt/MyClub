@@ -12,7 +12,6 @@ import java.util.List;
 
 @Controller("playerWebCtrl")
 @RequestMapping("/players")
-@SessionAttributes({"players","player"})
 public class PlayersController {
 
     @Autowired

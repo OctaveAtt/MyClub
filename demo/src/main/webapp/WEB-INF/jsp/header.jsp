@@ -9,11 +9,11 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color: blue">
         <div>
-            <a href="/" class="navbar-brand">ProductManager</a>
+            <a href="${pageContext.request.contextPath}/" class="navbar-brand">ProductManager</a>
         </div>
 
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="\players"> Players</a></li>
+            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}\players"> Players</a></li>
             <li class="nav-item"><a class="nav-link" href="\agents"> Agents</a></li>
             <li class="nav-item"><a class="nav-link" href="\clubs">Clubs</a></li>
             <c:choose>

@@ -18,17 +18,19 @@ public class LoginController {
     private IUserJPA jpa;
 
     @GetMapping("/login")
-    public String login(@ModelAttribute("user") User user){
+    public String login(@ModelAttribute("user") User user,HttpSession session){
         User dataUser = jpa.findByUsername(user.getUsername());
         if(dataUser != null && dataUser.verifyPassword(user)){
             return "index";
         }
+        session.invalidate();
         return "error";
     }
 
     @GetMapping("/logout")
     public String logout(HttpSession session){
+
         session.invalidate();
-        return "forward:/clubs";
+        return "clubs";
     }
 }
