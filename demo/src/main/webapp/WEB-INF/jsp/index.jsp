@@ -9,14 +9,14 @@
 <body>
 <%@include file="header.jsp" %>
 <div class="container">
-    <h1><spring:message code="welcome.message"/> ${sessionScope.user.username}</h1>
+<h1>Home of ${sessionScope.user.username}</h1>
 <h2>List of releases</h2>
 <ul>
     <li><a href="${pageContext.request.contextPath}/clubs">Clubs</a></li>
     <li><a href="${pageContext.request.contextPath}/players">Players</a></li>
     <li><a href="${pageContext.request.contextPath}/agents">Agents</a></li>
 </ul>
-<c:if test="${empty sessionScope.user}">
+<c:if test="${empty sessionScope.user.username}">
 <form:form action="/login" method="get" modelAttribute="user">
     <div class="mb-3">
         <form:label for="username" class="form-label" path="username"></form:label>

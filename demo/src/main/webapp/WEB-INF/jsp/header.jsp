@@ -19,7 +19,7 @@
             <c:choose>
                 <c:when test="${empty sessionScope.user}">
 
-                    <li class="nav-item"><a class="nav-link" href="\index">Connexion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="\">Connexion</a></li>
 
                 </c:when>
                 <c:otherwise>
