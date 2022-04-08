@@ -22,7 +22,7 @@
 
     <c:forEach var="agent" items="${agents}">
         <tr>
-            <td><a href="/clubs/${agent.id}">${agent.name}</a></td>
+            <td><a href="/agents/${agent.id}">${agent.name}</a></td>
             <td>${agent.salary}</td>
             <td>${agent.agency}</td>
         </tr>
